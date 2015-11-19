@@ -1,0 +1,71 @@
+<ion-view ng-controller="AppController">
+    <ion-header-bar animation="no-animation" class="bar-positive">
+        <h1 class="title">搜索</h1>
+    </ion-header-bar>
+    <ion-content class="has-footer">
+        <ion-list class="mine-list customer-list list-arrow">
+            <ion-item class="item" ng-repeat="item in searchOptions" ng-click="openSelect(item)">
+                {{item.title}}
+                <span class="item-note">{{item.selected.optionText || item.options[0].optionText}}</span>
+            </ion-item>
+        </ion-list>
+        <div class="padding-10">
+            <button class="button button-block button-outline-none button-large button-positive" ng-click="searchCustomer()">搜&nbsp;&nbsp;索</button>
+        </div>
+        <div class="history">
+            <div class="item-divider-transparent title">
+                <button class="button"><i class="icon ion-ios7-clock-outline"></i></button>&nbsp; 近期搜索记录
+                <button class="button button-outline-none button-large button-positive" ng-click="searchCustomer()">搜&nbsp;&nbsp;索</button>
+            </div>
+            <div class="list mine-list list-arrow customer-list" ng-if="searchData">
+                <div class="item">
+                    <div class="item-content" ng-click="searchCustomerFromHistory()">
+                       {{searchData.demand || '不限'}}{{'+' + searchData.salary + '+'}}{{ searchData.area|| '不限'}}
+                        <span class="item-note">共{{searchData.totalNum.num || '0'}}条</span>
+                    </div>                        
+                </div>
+                <div class="item item-clear">
+                    <button class="button button-block button-clear button-energized" ng-click="cleanCache()" style="margin:0;">清空搜索条件</button>
+                </div>
+            </div>
+            <div class="list" ng-if="!searchData.totalNum">
+                <div class="item">
+                    <div class="item-content">
+                        暂无历史搜索记录
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </ion-content>
+    <ion-footer-bar ng-controller="AppController">
+        <div class="tabs tabs-icon-top row row-center">
+            <div class="col col-center">
+                <a class="tab-item has-badge" href="#/home/interested">
+                    <i class="icon ion-eye"></i>
+                    我的家园
+                    <!-- <span class="badge badge-assertive">3</span> -->
+                </a>  
+            </div>
+            <div class="col col-center">
+                <a class="tab-item" href="#/message" ng-class="{'has-badge':messageBadge}">
+                    <i class="icon ion-ios7-email-outline"></i>
+                    消息
+                    <span ng-show="{{messageBadge}}" class="badge badge-assertive">{{messageBadge>99?'99+':messageBadge}}</span>
+                </a>
+            </div>
+            <div class="col col-center">
+                <a class="tab-item tab-item-active" href="#/customer">
+                    <i class="icon ion-ios7-people"></i>
+                    找客户
+                </a>
+            </div>
+            <div class="col col-center">
+                <a class="tab-item" href="#/mine">
+                    <i class="icon ion-ios7-person-outline"></i>
+                    我            
+                </a>
+            </div>        
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

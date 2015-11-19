@@ -1,0 +1,94 @@
+<ion-view ng-controller="AppController">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons">
+            <button ng-click="goBack()" class="button button-icon icon ion-ios7-arrow-back"></button>
+        </div>
+        <h1 class="title has-desc">
+            {{customers.indeustryTitle}}
+            <span class="sub-desc">共找到 {{customers.totalNum.num}} 个</span>
+        </h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-email" ng-click="sendMass()" ng-disabled="checkAbility()"></button>
+        </div>
+    </ion-header-bar>
+    <div class="bar bar-subheader customer-filter">
+        <div class="row row-tabs">
+            <div class="col col-center tab-item dropdown" dropdown on-toggle="toggled(open,1)">
+                <div class="col-item dropdown-toggle" dropdown-toggle>所在行业 <i class="icon ion-ios7-arrow-down"></i></div>
+                <div class="dropdown-menu arrow-box">
+                    <ion-scroll direction="y" zooming="true" style="height:320px;">
+                        <ion-radio ng-value="item.value" name="filteredIndustry" ng-model="filtered.industry" ng-change="filterChange(item,filters.industry)" ng-repeat="item in filters.industry | orderBy:'order':true">
+                            {{item.option}}
+                        </ion-radio>
+                    </ion-scroll>
+                </div>
+            </div>
+            <div class="col col-center tab-item dropdown" dropdown on-toggle="toggled(open,2)">
+                <div class="col-item dropdown-toggle" dropdown-toggle>年龄 <i class="icon ion-ios7-arrow-down"></i></div>
+                <div class="dropdown-menu arrow-box arrow-box2">
+                    <ion-radio ng-value="item.value" name="filteredAge" ng-model="filtered.age" ng-change="filterChange(item,filters.age)" ng-repeat="item in filters.age | orderBy:'order':true">
+                        {{item.option}}
+                    </ion-radio>
+                </div>
+            </div>
+            <div class="col col-center tab-item dropdown" dropdown on-toggle="toggled(open,3)">
+                <a class="col-item dropdown-toggle" dropdown-toggle>性别 <i class="icon ion-ios7-arrow-down"></i></a>
+                <div class="dropdown-menu arrow-box arrow-box3">
+                    <ion-radio ng-value="item.value" name="filteredSex" ng-model="filtered.sex" ng-change="filterChange(item,filters.sex)" ng-repeat="item in filters.sex | orderBy:'order':true">
+                        {{item.option}}
+                    </ion-radio>
+                </div>
+            </div>
+            <div class="col col-center tab-item dropdown" dropdown on-toggle="toggled(open,4)">
+                <a class="col-item dropdown-toggle" dropdown-toggle>婚姻 <i class="icon ion-ios7-arrow-down"></i></a>
+                <div class="dropdown-menu arrow-box arrow-box4">
+                    <ion-radio ng-value="item.value" name="filteredMarry" ng-model="filtered.marry" ng-change="filterChange(item,filters.marry)" ng-repeat="item in filters.marry | orderBy:'order':true">
+                        {{item.option}}
+                    </ion-radio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="backdrop" class="backdrop"></div>
+    <ion-content class="has-subheader" style="margin-top:10px">
+       <ion-list class="list list-customer-result">
+            <div class="item item-right-editable"
+                 collection-repeat="customer in customers.list | filter:filtered"
+                 collection-item-height="getItemHeight(customer)"
+                 collection-item-width="'100%'"
+                 bindonce="customer">
+                <div class="item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" 
+                        value="{{customer.user_id}}"
+                        ng-checked=""
+                        ng-model="customer.selected" 
+                            ng-disabled="!cancel"                       
+                        >
+                    </label>
+                </div>
+                <div class="item-edited">
+                    <article class="item-thumbnail-left">
+                        <a href="#/space/user/{{customer.id}}" class="item-image">
+                           <img ng-src="{{customer.avatar}}">
+                        </a>
+                        <h2>
+                            <a href="#/space/user" class="dark" ng-bind="customer.nickname"></a>
+                        </h2>
+                        <ul>
+                            <li ng-bind="customer.industry_name"></li>
+                            <li>年收入：{{customer.income_name}}</li>
+                        </ul>                  
+                    </article>
+                    <div class="request">
+                        <span class="title">最新需求</span>
+                        <button class="button button-outline button-positive" ng-repeat="request in customer.requests" ng-bind="request.name"></button>
+                    </div>
+                </div>
+            </div>
+       </ion-list>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="action-sheet-title">您可对<span class="dark" ng-bind="customerCountPlus"></span>/<span ng-bind="limitAmount"></span>个用户群发私信</div>
+    </ion-footer-bar>
+</ion-view>

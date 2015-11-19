@@ -1,0 +1,40 @@
+<ion-view ng-controller="AppController">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons">
+            <button ng-click="goBack()" class="button button-icon icon ion-search"></button>
+        </div>
+        <h1 class="title has-desc">
+            {{searchString || '不限'}}
+            <span class="sub-desc">共找到{{customerList.totalNum}}个</span>
+        </h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-email" ng-click="sendMass()" ng-disabled="true"></button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="item-divider text-center">
+            您也可进入分组手动筛选
+        </div>
+       <ion-list class="list list-arrow list-result">
+            <div class="item item-left-editable" ng-repeat="item in customersBySector">
+                <div class="item-checkbox">
+                    <label class="checkbox">
+                        <input
+                            type="checkbox"
+                            name="customersSelected[]"
+                            value="{{item.value}}"
+                            ng-checked="{{item.selected}}"
+                            ng-model="item.selected">
+                    </label>
+                  </div>
+                <div class="item-edited">
+                    <a href="#/customer/result/{{item.industry_id}}/{{item.selected}}">{{item.option}} ({{item.value}})</a>
+                </div>
+            </div>
+       </ion-list>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="action-sheet-title">您可对<span class="dark" ng-bind="customerCountPlus"></span>/<span ng-bind="limitAmount"></span>个用户群发私信</div>
+    </ion-footer-bar>
+</ion-view>

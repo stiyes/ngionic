@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Ionic Demo | ionic 组合查询功能 </title>
+
+    <link rel="stylesheet" href="lib/ionic/css/ionic.css">
+
+    <!-- ionic/angularjs scripts -->
+    <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+    <!--<script src="scripts/ionic-extension.js"></script>-->
+
+    <script src="lib/ngCordova/ng-cordova.js"></script>
+    <script src="lib/ui-bootstrap-0.12.0.min.js"></script>
+    <!--<script src="lib/ui-bootstrap-tpls-0.12.0.js"></script>-->
+    <!-- Needed for Cordova/PhoneGap -->
+    <script src="cordova.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/services.js"></script>
+    <script src="scripts/controllers/controllers.js"></script>
+    <!--<script src="scripts/directives/directives.js"></script>-->
+</head>
+
+<body ng-app="myApp">
+
+<ion-side-menus>
+    <!-- Center content -->
+    <ion-side-menu-content drag-content="allowSideMenu">
+        <ion-nav-view animation="no-animation"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left" width="180">
+        <ng-include src="'views/layout/sidemenu.html'"></ng-include>
+    </ion-side-menu>
+</ion-side-menus>
+
+</body>
+</html>

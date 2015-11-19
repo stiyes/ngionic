@@ -1,0 +1,238 @@
+{
+  "list": [
+    {
+      "id": "1",
+      "option": "投资理财",
+      "key": "demand",
+      "title": "金融需求",
+      "type": "radio",
+      "selected": "",
+      "options": [
+        {
+          "optionId": "0",
+          "optionText": "不限"
+        },
+        {
+          "optionId": "3",
+          "optionText": "理财产品"
+        },
+        {
+          "optionId": "77",
+          "optionText": "贷款"
+        },
+        {
+          "optionId": "79",
+          "optionText": "银行卡"
+        },
+        {
+          "optionId": "81",
+          "optionText": "储蓄"
+        },
+        {
+          "optionId": "83",
+          "optionText": "证券"
+        },
+        {
+          "optionId": "85",
+          "optionText": "期货"
+        },
+        {
+          "optionId": "87",
+          "optionText": "贵金属"
+        },
+        {
+          "optionId": "89",
+          "optionText": "外汇"
+        },
+        {
+          "optionId": "91",
+          "optionText": "保险"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "option": "不限",
+      "key": "salary",
+      "title": "年薪范围",
+      "type": "radio",
+      "selected": "",
+      "options": [
+        {
+          "optionId": "0",
+          "optionText": "不限"
+        },
+        {
+          "optionId": "0|5",
+          "optionText": "0-5万"
+        },
+        {
+          "optionId": "6|10",
+          "optionText": "6-10万"
+        },
+        {
+          "optionId": "11|15",
+          "optionText": "11-15万"
+        },
+        {
+          "optionId": "16|25",
+          "optionText": "16-25万"
+        },
+        {
+          "optionId": "26|35",
+          "optionText": "26-35万"
+        },
+        {
+          "optionId": "36|50",
+          "optionText": "36-50万"
+        },
+        {
+          "optionId": "51|100",
+          "optionText": "51-100万"
+        },
+        {
+          "optionId": "100以上",
+          "optionText": "100万以上"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "option": "不限",
+      "key": "area",
+      "title": "所在地",
+      "type": "radio",
+      "selected": "",
+      "options": [
+        {
+          "optionId": "0",
+          "optionText": "不限"
+        },
+        {
+          "optionId": "-1",
+          "optionText": "机构附近的用户"
+        },
+        {
+          "optionId": "23",
+          "optionText": "黄浦区"
+        },
+        {
+          "optionId": "24",
+          "optionText": "卢湾区"
+        },
+        {
+          "optionId": "25",
+          "optionText": "徐汇区"
+        },
+        {
+          "optionId": "26",
+          "optionText": "长宁区"
+        },
+        {
+          "optionId": "27",
+          "optionText": "静安区"
+        },
+        {
+          "optionId": "28",
+          "optionText": "普陀区"
+        },
+        {
+          "optionId": "29",
+          "optionText": "闸北区"
+        },
+        {
+          "optionId": "30",
+          "optionText": "虹口区"
+        },
+        {
+          "optionId": "31",
+          "optionText": "杨浦区"
+        },
+        {
+          "optionId": "32",
+          "optionText": "闵行区"
+        },
+        {
+          "optionId": "33",
+          "optionText": "宝山区"
+        },
+        {
+          "optionId": "34",
+          "optionText": "嘉定区"
+        },
+        {
+          "optionId": "35",
+          "optionText": "浦东新区"
+        },
+        {
+          "optionId": "36",
+          "optionText": "金山区"
+        },
+        {
+          "optionId": "37",
+          "optionText": "松江区"
+        },
+        {
+          "optionId": "38",
+          "optionText": "青浦区"
+        },
+        {
+          "optionId": "40",
+          "optionText": "奉贤区"
+        },
+        {
+          "optionId": "41",
+          "optionText": "崇明县"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "option": "不限",
+      "key": "newadd",
+      "title": "新用户",
+      "type": "radio",
+      "selected": "",
+      "options": [
+        {
+          "optionId": "0",
+          "optionText": "不限"
+        },
+        {
+          "optionId": "1",
+          "optionText": "近一天"
+        },
+        {
+          "optionId": "3",
+          "optionText": "近三天"
+        },
+        {
+          "optionId": "7",
+          "optionText": "近一周"
+        },
+        {
+          "optionId": "30",
+          "optionText": "近一月"
+        }
+      ]
+    }
+  ],
+  "searchData": {
+    "demand": "不限",
+    "salary": "不限",
+    "area": "不限",
+    "newadd": "不限",
+    "totalNum": {
+      "num": "345"
+    }
+  },
+  "search": {
+    "demand": null,
+    "salary": null,
+    "area": null,
+    "newadd": "7"
+  },
+  "error": 0,
+  "accessToken": "6a12bd2f190ae57aab089ca91042ca71893a196d",
+  "userId": "14638"
+}

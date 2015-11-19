@@ -1,0 +1,27 @@
+<div class="modal modal-filter">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons">
+            <button ng-click="hideModal()" class="button button-icon icon ion-ios7-arrow-back"></button>
+        </div>
+        <h1 class="title" ng-class="{'has-desc':filterOptionIndex == 'demand'}">
+            {{filterPageTitle}}
+            <span class="sub-desc" ng-if="filterOptionIndex  == 'demand'">（可多选）</span>
+        </h1>
+        <div class="buttons" ng-click="hideModal()">
+            <span class="links">确认</span>
+        </div>
+    </ion-header-bar>
+
+    <ion-content>
+        <ion-list ng-if="filterOptionIndex == 'demand'">
+            <ion-checkbox class="item-checkbox-right" name="filterDemand" value="item.optionText" ng-model="filter.demand[item.optionId]" ng-repeat="item in filterOptions">
+                {{item.optionText}}
+            </ion-checkbox>
+        </ion-list>
+        <ion-list ng-if="filterOptionIndex !== 'demand'">
+            <ion-radio ng-value="item.optionId" name="filterOptionIndex" ng-model="filter[filterOptionIndex]" ng-repeat="item in filterOptions">
+                {{item.optionText}}
+            </ion-radio>
+        </ion-list>
+    </ion-content>
+</div>

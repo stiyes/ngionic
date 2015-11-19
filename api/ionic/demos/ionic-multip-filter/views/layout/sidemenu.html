@@ -1,0 +1,40 @@
+<ion-content  has-header="false" ng-controller="AppController">
+    <ion-list>
+        <!-- <a ng-click="goToPage('home')" class="item item-icon-left" href="">
+            <i class="icon ion-home"></i>
+            我的金融岛
+        </a>
+        <a ng-click="goToPage('about')" class="item item-icon-left" href="">
+            <i class="icon ion-ios7-information"></i>
+            关于我
+        </a> -->
+        <a menu-close ng-click="goToPage('home-interested');" class="item item-icon-left" href="">
+            <i class="icon ion-eye"></i>
+            我的金融岛
+        </a>
+        <a menu-close ng-click="goToPage('message');" class="item item-icon-left" href="">
+            <i class="icon ion-ios7-email-outline"></i>
+            消息
+        </a>
+        <a menu-close ng-click="goToPage('mine');" class="item item-icon-left" href="">
+            <i class="icon ion-ios7-person-outline"></i>
+            我            
+        </a>
+        <a menu-close ng-click="goToPage('customer');" class="item item-icon-left" href="">
+            <i class="icon ion-ios7-people"></i>
+            找客户
+        </a>
+        <a menu-close ng-click="logout();" class="item item-icon-left" href="">
+            <i class="icon ion-log-out"></i>
+            退出
+        </a>
+        <!-- 
+        <div class="item-divider">
+            &nbsp;
+        </div>
+        <a ng-click="goToPage('options')" class="item item-icon-left" href="">
+            <i class="icon ion-gear-a"></i>
+            设置
+        </a> -->
+    </ion-list>
+</ion-content>

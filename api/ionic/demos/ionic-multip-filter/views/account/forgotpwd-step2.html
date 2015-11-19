@@ -1,0 +1,26 @@
+<ion-view title="book.title">
+    <ion-header-bar class="bar-positive" ng-controller="AppController">
+        <div class="buttons">
+            <button ng-click="goBack()" class="button button-icon icon ion-ios7-arrow-left"></button>
+        </div>
+        <h1 class="title">找回密码</h1>     
+        <div class="buttons pull-right">
+            <a href="javascript:void(0)" ng-click="submitNewPwd('newPwd','confirmPwd')" class="links">提交</a>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <form action="">
+            <div class="list list-login">
+                <label class="item item-input">
+                    <span class="input-label">新密码</span>
+                    <input id="newPwd" type="password" placeholder="请输入新密码">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">确认密码</span>
+                    <input id="confirmPwd" type="password" placeholder="请再次输入新密码">
+                </label>
+                <article class="item-text-padding">为了保证您的账号安全，请保证新旧密码不一样</article>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

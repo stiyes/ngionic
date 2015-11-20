@@ -6,4 +6,5 @@ node_modules/
 .DS_Store
 log/*
 wp-content/themes/fictive_bak/
+wp-config.php
 

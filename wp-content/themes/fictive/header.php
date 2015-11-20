@@ -12,13 +12,10 @@ $gravatar = get_theme_mod( 'fictive_gravatar_email', get_option( 'admin_email' )
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="description" content="Ngionic|ionicFramework|ionicFramework中文博客">
-<meta name="keywords" content="ngionic,ionic,ionicFramework中文,ionicFramework中文api,轻应用app,AngularJS中文,AngularJS中文api,AngularJS,ionicFramework,Javascript,MVC,MVVM,Html5,Hybird App">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="shortcut icon" type="image/ico" href="/favicon.ico">
 
 <?php wp_head(); ?>
 </head>
@@ -36,7 +33,7 @@ $gravatar = get_theme_mod( 'fictive_gravatar_email', get_option( 'admin_email' )
 			<?php if ( '' !=  $gravatar ) : ?>
 				<div class="header-avatar">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="/avatar/default.jpg" width="70" height="70" alt="">
+						<img src="<?php echo esc_url( fictive_get_gravatar() ); ?>" width="70" height="70" alt="">
 					</a>
 				</div>
 			<?php endif; ?>

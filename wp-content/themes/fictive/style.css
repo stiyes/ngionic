@@ -3,7 +3,7 @@
  * Author: Automattic
  * Author URI: https://wordpress.com/themes/
  * Description: Fictive is all about you -- your style, your look, your story. Make it personal with a custom header image, a Gravatar, and links to your favorite social networks. Use Post Formats to dress up your content, add a custom menu and widgets, or keep it simple with a fixed-position header.
- * Version: 1.0.2
+ * Version: 1.1.2
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: fictive
@@ -123,7 +123,7 @@ a img {
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5em;
 }
 
@@ -134,7 +134,7 @@ select,
 textarea {
   color: #404040;
   font-family: Georgia, "Bitstream Charter", serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -590,7 +590,7 @@ textarea {
 h1 {
   color: #bd5532;
   font-family: "Bitter", Georgia, Times, serif;
-  font-size: 26px;
+  font-size: 46px;
   font-weight: normal;
   line-height: 1;
   margin: 24px 0;
@@ -599,7 +599,7 @@ h1 {
 h2 {
   color: #bd5532;
   font-family: "Bitter", Georgia, Times, serif;
-  font-size: 16px;
+  font-size: 26px;
   font-weight: normal;
   line-height: 1;
   margin: 24px 0;
@@ -608,7 +608,7 @@ h2 {
 h3 {
   color: #bd5532;
   font-family: "Bitter", Georgia, Times, serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: normal;
   line-height: 1;
   margin: 24px 0;
@@ -1025,7 +1025,7 @@ a:hover, a:focus, a:active {
 /* =Header */
 .site-header {
   float: left;
-  margin-top: 72px;
+  margin-top: 80px;
   margin-bottom: 0;
   position: relative;
   width: 17.4em;
@@ -1044,7 +1044,7 @@ a:hover, a:focus, a:active {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   display: block;
-  margin: 0 auto 7px;
+  margin: -8px auto 7px;
   opacity: 0.8;
   position: relative;
   z-index: -2;
@@ -1114,12 +1114,15 @@ a:hover, a:focus, a:active {
 }
 @media screen and (max-width: 51em) {
   .site-branding {
+		margin-top: 72px;
     margin-bottom: 0;
     border-left: 0;
     border-right: 0;
   }
+  .has-header-image .site-branding {
+    margin-top: 0;
+  }
 }
-
 .site-title {
   font-size: 1.625em;
   line-height: 1.84615em;
@@ -1176,18 +1179,6 @@ a:hover, a:focus, a:active {
 }
 .main-navigation li li a {
   padding-left: 48px;
-}
-
-.main-navigation li li a:before {
-content: "\f431";
-  font-family: "Genericons";
-font-size: 16px;
-font-style: normal;
-font-weight: normal;
-line-height: 1;
-text-decoration: none;
-vertical-align: text-bottom;
-margin-left: -21px;
 }
 .main-navigation li li li a {
   padding-left: 72px;
@@ -1860,6 +1851,7 @@ a .post-date:before {
   line-height: 1.84615em;
   margin: 12px 0;
   padding: 0 1%;
+  word-wrap: break-word;
 }
 
 .size-thumbnail + .wp-caption-text,
@@ -2313,10 +2305,6 @@ div#respond {
   line-height: 1.84615em;
 }
 
-pre code{
-  color:green;
-}
-
 .no-comments {
   color: #ada393;
   font-style: italic;
@@ -2602,42 +2590,34 @@ div.sharedaddy div.sd-block {
   content: "\f413";
 }
 
-.single-dwqa-question .site-content,
-.page-template-special-php .site-content{
-float:none;
-width:100%;
-max-width: auto;
+/* =Eventbrite */
+.eventbrite-event .entry-meta span:before {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Genericons";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: text-bottom;
 }
-.single-dwqa-question .site-header,
-.page-template-special-php .site-header{
-margin-top:0;
-padding-top: 55px;
-width:100%;
- float:none;
+.hentry.eventbrite-event:before {
+  content: "\f305";
 }
-.single-dwqa-question .site-header>a,
-.page-template-special-php .site-header>a{
- max-height:260px;
-overflow:hidden;
-display: none;
+.eventbrite-event .entry-meta > span {
+  display: inline-block;
+  margin: 0 8px;
+  width: auto;
 }
-.single-dwqa-question .main-navigation li,
-.page-template-special-php .main-navigation li{
-display:inline-block;
+.eventbrite-event .event-time:before {
+  content: "\f307";
 }
-.single-dwqa-question #secondary,
-.single-dwqa-question .sub-menu,
-.page-template-special-php #secondary,
-.page-template-special-php .sub-menu{
-display:none;
+.eventbrite-event .event-venue-text:before {
+  content: "\f417";
 }
-.single-dwqa-question .pagetitle,
-.page-template-special-php .pagetitle{
-text-align:center;
-font-size:26px;
-font-weight:bolder;
+.eventbrite-event .event-organizer-text:before {
+  content: "\f304";
 }
-.single-dwqa-question .main-navigation a,
-.page-template-special-php .main-navigation a{
-border:none;
+.eventbrite-event .event-details-text:before {
+  content: "\f455";
 }

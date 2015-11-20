@@ -60,6 +60,12 @@ function fictive_setup() {
 		'comment-form',
 		'gallery',
 	) );
+
+	/**
+	 * Add support for Eventbrite.
+	 * See: https://wordpress.org/plugins/eventbrite-api/
+	 */
+	add_theme_support( 'eventbrite' );
 }
 endif; // fictive_setup
 add_action( 'after_setup_theme', 'fictive_setup' );
@@ -141,6 +147,34 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Register Google Fonts
+ */
+function fictive_google_fonts() {
+
+	$protocol = is_ssl() ? 'https' : 'http';
+
+	/*	translators: If there are characters in your language that are not supported
+		by Open Sans, translate this to 'off'. Do not translate into your own language. */
+
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'fictive' ) ) {
+
+		wp_register_style( 'fictive-open-sans', "$protocol://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" );
+
+	}
+
+	/*	translators: If there are characters in your language that are not supported
+		by Bitter, translate this to 'off'. Do not translate into your own language. */
+
+	if ( 'off' !== _x( 'on', 'Bitter font: on or off', 'fictive' ) ) {
+
+		wp_register_style( 'fictive-bitter', "$protocol://fonts.googleapis.com/css?family=Bitter:400,700,400italic&subset=latin,latin-ext" );
+
+	}
+
+}
+add_action( 'init', 'fictive_google_fonts' );
+
+/**
  * Enqueue Google Fonts for custom headers
  */
 function fictive_admin_scripts( $hook_suffix ) {
@@ -153,3 +187,11 @@ function fictive_admin_scripts( $hook_suffix ) {
 
 }
 add_action( 'admin_enqueue_scripts', 'fictive_admin_scripts' );
+
+/**
+ * Remove the separator from Eventbrite events meta.
+ */
+function edin_remove_meta_separator() {
+	return false;
+}
+add_filter( 'eventbrite_meta_separator', 'edin_remove_meta_separator' );

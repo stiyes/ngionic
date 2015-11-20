@@ -10,9 +10,17 @@ msgstr ""
 "X-Generator: GlotPress/0.1\n"
 "Project-Id-Version: Fictive\n"
 
+#: eventbrite/eventbrite-index.php:38 eventbrite/eventbrite-single.php:25
+msgid "Eventbrite event"
+msgstr ""
+
+#. Author URI of the plugin/theme
+#: wp-content/themes/pub/fictive/style.css
 msgid "https://wordpress.com/themes/"
 msgstr ""
 
+#. Description of the plugin/theme
+#: wp-content/themes/pub/fictive/style.css
 msgid "Fictive is all about you -- your style, your look, your story. Make it personal with a custom header image, a Gravatar, and links to your favorite social networks. Use Post Formats to dress up your content, add a custom menu and widgets, or keep it simple with a fixed-position header."
 msgstr ""
 
@@ -77,7 +85,7 @@ msgstr "Navigation des articles"
 msgid "Posts navigation"
 msgstr "Navigation des articles"
 
-#: inc/extras.php:63
+#: inc/extras.php:67
 msgid "Page %s"
 msgstr "Page %s"
 
@@ -113,7 +121,10 @@ msgstr "Chercher"
 msgid "Widgets"
 msgstr "Widgets"
 
-#: functions.php:162
+#. translators: If there are characters in your language that are not supported
+#. by Bitter, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:168
 msgctxt "Bitter font: on or off"
 msgid "on"
 msgstr "on"
@@ -122,7 +133,10 @@ msgstr "on"
 msgid "Menu"
 msgstr "Menu"
 
-#: functions.php:153
+#. translators: If there are characters in your language that are not supported
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:159
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
@@ -131,7 +145,7 @@ msgstr "on"
 msgid "Social Links"
 msgstr "Liens Sociaux"
 
-#: functions.php:72
+#: functions.php:78
 msgid "Sidebar"
 msgstr "Colonne latérale"
 
@@ -172,6 +186,7 @@ msgid "All %s posts"
 msgstr "Tous les articles de %s"
 
 #: content-page.php:30 content-single.php:27 content.php:35
+#: eventbrite/eventbrite-index.php:46 eventbrite/eventbrite-single.php:33
 #: inc/template-tags.php:110 inc/template-tags.php:147
 msgid "Edit"
 msgstr "Modifier"

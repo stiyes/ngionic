@@ -42,14 +42,13 @@ $formats = get_theme_support( 'post-formats' );
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_excerpt(); ?>
-			<?/*php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fictive' ) ); ?>
+			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'fictive' ) ); ?>
 			<?php
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'fictive' ),
 					'after'  => '</div>',
 				) );
-			*/?>
+			?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 

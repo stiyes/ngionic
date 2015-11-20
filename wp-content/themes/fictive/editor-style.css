@@ -525,10 +525,6 @@ code, kbd, tt, var {
   line-height: 1.84615em;
 }
 
-pre code{
- color: green;
-}
-
 abbr, acronym {
   border-bottom: 1px dotted #ada393;
   cursor: help;

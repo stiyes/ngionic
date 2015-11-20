@@ -18,10 +18,10 @@
 define('DB_NAME', 'philhsu1119');
 
 /** MySQL数据库用户名 */
-define('DB_USER', 'philhsu1119');
+define('DB_USER', 'root');
 
 /** MySQL数据库密码 */
-define('DB_PASSWORD', 'rap22ptk');
+define('DB_PASSWORD', 'C4TrbxLOgx');
 
 /** MySQL主机 */
 define('DB_HOST', 'localhost');
